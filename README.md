@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Bookstore CMS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a content management system (CSM) for a bookstore. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Live Link
+
+To checkout a live demo of this application, visit [here](https://bookix.herokuapp.com).
 
 ## Available Scripts
 
