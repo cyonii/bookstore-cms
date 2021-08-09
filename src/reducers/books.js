@@ -1,9 +1,12 @@
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions/types';
+import utils from '../utils';
+
+const makeBookID = () => utils.makeRandomID(10);
 
 const initialState = [
-  { id: 'B34KS7K1T1T', title: 'Into the Wild', category: 'Biography' },
-  { id: 'P9W1C6GQK03', title: 'Guns, Germs, and Steel', category: 'History' },
-  { id: 'RYN01K1K221', title: 'The Forever War', category: 'Sci-Fi' },
+  { id: makeBookID(), title: 'Into the Wild', category: 'Biography' },
+  { id: makeBookID(), title: 'Guns, Germs, and Steel', category: 'History' },
+  { id: makeBookID(), title: 'The Forever War', category: 'Sci-Fi' },
 ];
 
 export default (state = initialState, action) => {
