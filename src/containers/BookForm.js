@@ -9,20 +9,20 @@ const BookForm = () => {
   ));
 
   return (
-    <form>
-      <h1>Book Form</h1>
+    <form className="book-form">
+      <h1>Add new book</h1>
 
       <div className="input-group">
-        <label htmlFor="title">
+        <label className="form-label" htmlFor="title">
           Title
-          <input type="text" name="title" id="title" required />
+          <input className="form-control" type="text" name="title" id="title" required />
         </label>
       </div>
 
       <div className="input-group">
-        <label htmlFor="category">
+        <label className="form-label" htmlFor="category">
           Category
-          <select name="category" id="category" required>
+          <select className="form-control" name="category" id="category" required>
             <option>--select--</option>
             {categoryOptions}
           </select>
