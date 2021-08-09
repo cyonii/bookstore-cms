@@ -1,10 +1,10 @@
 import BookForm from '../containers/BookForm';
-import BookList from '../containers/BookList';
+import BooksList from '../containers/BooksList';
 
 function App() {
   return (
     <>
-      <BookList />
+      <BooksList />
       <BookForm />
     </>
   );
