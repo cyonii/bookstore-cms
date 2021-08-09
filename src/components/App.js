@@ -4,8 +4,8 @@ import BookList from '../containers/BookList';
 function App() {
   return (
     <>
-      <BookForm />
       <BookList />
+      <BookForm />
     </>
   );
 }
