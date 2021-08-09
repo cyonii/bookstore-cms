@@ -7,7 +7,7 @@ const BooksList = (props) => {
   const tableRows = books.map((book) => <BookItem key={book.id} book={book} />);
 
   return (
-    <table className="book-table">
+    <table className="book-list">
       <thead>
         <tr>
           <th>ID</th>
