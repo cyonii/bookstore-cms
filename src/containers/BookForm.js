@@ -28,6 +28,12 @@ const BookForm = () => {
           </select>
         </label>
       </div>
+
+      <div className="input-group">
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+      </div>
     </form>
   );
 };
