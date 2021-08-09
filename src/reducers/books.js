@@ -14,13 +14,13 @@ export default (state = initialState, action) => {
     case CREATE_BOOK: {
       const { book } = action.payload;
 
-      return { ...state, books: state.books.concat(book) };
+      return [...state, book];
     }
     case REMOVE_BOOK: {
       const { id } = action.payload;
       const filteredBooks = state.books.filter((book) => book.id !== id);
 
-      return { ...state, books: filteredBooks };
+      return [...filteredBooks];
     }
     default:
       return state;
