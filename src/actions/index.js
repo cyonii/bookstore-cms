@@ -1,4 +1,4 @@
-import { CREATE_BOOK, REMOVE_BOOK } from '../redux/actionTypes';
+import { CREATE_BOOK, REMOVE_BOOK } from './types';
 
 const addBook = (book) => ({
   type: CREATE_BOOK,
