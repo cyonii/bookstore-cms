@@ -19,7 +19,7 @@ export default (state = initialState, action) => {
     }
     case REMOVE_BOOK: {
       const { id } = action.payload;
-      const filteredBooks = state.books.filter((book) => book.id !== id);
+      const filteredBooks = state.filter((book) => book.id !== id);
 
       return [...filteredBooks];
     }
