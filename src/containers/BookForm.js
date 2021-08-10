@@ -7,7 +7,7 @@ const BookForm = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const categoryOptions = categories.map((ct) => (
-    <option value={ct} key={ct} selected={ct === category}>
+    <option value={ct} key={ct}>
       {ct}
     </option>
   ));

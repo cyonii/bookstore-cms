@@ -10,16 +10,21 @@ const CategoryFilter = () => {
   const currentFilter = useSelector((state) => state.filter);
 
   const filterOptions = [defaultFilter, ...categories].map((category) => (
-    <option key={makeRandomID(50)} selected={category === currentFilter}>
+    <option key={makeRandomID(50)} value={category}>
       {category}
     </option>
   ));
-  const handleChange = (e) => dispatch(changeFilter(e.currentTarget.value));
+  const handleChange = (e) => dispatch(changeFilter(e.target.value));
 
   return (
     <label htmlFor="category-filter" className="form-label">
       <b>FILTER:</b>
-      <select className="form-control" id="category-filter" onChange={handleChange}>
+      <select
+        className="form-control"
+        id="category-filter"
+        onChange={handleChange}
+        value={currentFilter}
+      >
         {filterOptions}
       </select>
     </label>
