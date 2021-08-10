@@ -1,4 +1,4 @@
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
