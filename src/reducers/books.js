@@ -13,6 +13,7 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case CREATE_BOOK: {
       const { book } = action.payload;
+      book.id = makeBookID();
 
       return [...state, book];
     }
