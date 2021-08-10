@@ -4,8 +4,12 @@ import BooksList from '../containers/BooksList';
 function App() {
   return (
     <>
-      <BooksList />
-      <BookForm />
+      <div id="book-list-container">
+        <BooksList />
+      </div>
+      <div id="book-form-container">
+        <BookForm />
+      </div>
     </>
   );
 }
