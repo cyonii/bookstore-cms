@@ -1,5 +1,6 @@
 $color-primary: rgb(248, 239, 227);
 $color-grey: #aaa;
+$color-dodgerblue: dodgerblue;
 
 * {
   box-sizing: border-box;
@@ -22,12 +23,17 @@ h6 {
 }
 
 button {
+  background-color: lighten($color-grey, 25%);
+  border-radius: 0.25rem;
+  border: 1px solid darken($color-grey, 10%);
   padding: 0.5rem 1rem;
+  font-size: 16px;
 }
 
 button,
 select {
   cursor: pointer;
+  -webkit-appearance: none;
 }
 
 ul {
@@ -62,11 +68,11 @@ ul {
 }
 
 #book-list-container {
-  background-color: $color-primary;
+  background-color: darken($color-primary, 15%);
 }
 
 #book-form-container {
-  background-color: darken($color-primary, 5%);
+  background-color: darken($color-primary, 10%);
 }
 
 .book-list {
@@ -76,7 +82,7 @@ ul {
 .book-item {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid $color-grey;
+  border-bottom: 1px solid darken($color-grey, 5%);
 }
 
 .book-title {
@@ -91,7 +97,7 @@ ul {
 }
 
 .book-id {
-  color: darken($color-grey, 2%);
+  color: darken($color-grey, 15%);
   font-weight: lighter;
   font-family: monospace;
 }
@@ -99,7 +105,9 @@ ul {
 .book-remove-btn {
   padding: 0;
   border: none;
-  color: dodgerblue;
+  border-radius: 0;
+  background-color: lighten($color-dodgerblue, 55%);
+  color: $color-dodgerblue;
 
   &:hover {
     text-decoration: underline;
@@ -111,12 +119,8 @@ ul {
   flex-direction: column;
 
   @media (min-width: 768px) {
-    width: 90%;
-    margin: auto;
-  }
-
-  @media (min-width: 992px) {
     width: 70%;
+    margin: auto;
   }
 }
 
@@ -128,7 +132,16 @@ ul {
 
 .form-control {
   padding: 0.5rem;
+  border: 1px solid #aaa;
+  border-radius: 0.25rem;
   width: 100%;
+  font-size: 16px;
+
+  &:active,
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px $color-dodgerblue;
+  }
 }
 
 .form-label {
