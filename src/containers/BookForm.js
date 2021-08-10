@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../actions';
+import categories from '../data/categories.json';
 
 const BookForm = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
-  const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
   const categoryOptions = categories.map((ct) => {
     if (ct === category) {
