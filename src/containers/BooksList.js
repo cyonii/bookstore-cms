@@ -1,10 +1,17 @@
+import { connect, useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { connect } from 'react-redux';
 import BookItem from '../components/BookItem';
+import { removeBook } from '../actions';
 
 const BooksList = (props) => {
   const { books } = props;
-  const tableRows = books.map((book) => <BookItem key={book.id} book={book} />);
+  const dispatch = useDispatch();
+
+  const bookRemoveHandler = (id) => dispatch(removeBook(id));
+
+  const tableRows = books.map((book) => (
+    <BookItem key={book.id} book={book} removeBookHandler={bookRemoveHandler} />
+  ));
 
   return (
     <ul className="book-list">
