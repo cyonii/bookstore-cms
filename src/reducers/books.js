@@ -14,7 +14,11 @@ export default (state = initialState, action) => {
     case CREATE_BOOK: {
       const { book } = action.payload;
       book.id = makeBookID();
+      book.title = book.title.trim();
 
+      if (state.some((bk) => bk.title === book.title && bk.category === book.category)) {
+        return state;
+      }
       return [...state, book];
     }
     case REMOVE_BOOK: {
