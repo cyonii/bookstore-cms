@@ -14,10 +14,12 @@ const BookForm = () => {
   ));
 
   const dispatch = useDispatch();
-  const handleTitleChange = (e) => setTitle(e.currentTarget.value);
-  const handleCategoryChange = (e) => setCategory(e.currentTarget.value);
+  const handleTitleChange = (e) => setTitle(e.target.value);
+  const handleCategoryChange = (e) => setCategory(e.target.value);
   const handleSubmit = (e) => {
     e.preventDefault();
+    e.nativeEvent.preventDefault();
+    e.stopPropagation();
 
     if (title && category) {
       dispatch(addBook({ title, category }));
@@ -25,10 +27,11 @@ const BookForm = () => {
       setTitle('');
       setCategory('');
     }
+    return false;
   };
 
   return (
-    <form className="book-form">
+    <form className="book-form" onSubmit={handleSubmit}>
       <h2>Add new book</h2>
 
       <div className="input-group">
@@ -50,14 +53,14 @@ const BookForm = () => {
         <label className="form-label" htmlFor="category">
           Category
           <select className="form-control" onChange={handleCategoryChange} id="category" required>
-            <option>--select--</option>
+            <option value="">--select--</option>
             {categoryOptions}
           </select>
         </label>
       </div>
 
       <div className="input-group">
-        <button type="submit" onClick={handleSubmit} className="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Submit
         </button>
       </div>

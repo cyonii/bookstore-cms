@@ -1,12 +1,19 @@
+import { connect, useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { connect } from 'react-redux';
 import BookItem from '../components/BookItem';
 import CategoryFilter from '../components/CategoryFilter';
+import { removeBook } from '../actions';
 import defaultFilter from '../data/defaultFilter.json';
 
 const BooksList = (props) => {
   const { books } = props;
-  const listItems = books.map((book) => <BookItem key={book.id} book={book} />);
+  const dispatch = useDispatch();
+
+  const bookRemoveHandler = (id) => dispatch(removeBook(id));
+
+  const listItems = books.map((book) => (
+    <BookItem key={book.id} book={book} removeBookHandler={bookRemoveHandler} />
+  ));
 
   return (
     <ul className="book-list">

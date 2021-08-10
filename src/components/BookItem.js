@@ -1,12 +1,9 @@
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { removeBook } from '../actions';
 
 const BookItem = (props) => {
   const { book } = props;
-  const dispatch = useDispatch();
 
-  const handleRemoveBook = () => dispatch(removeBook(book.id));
+  const handleRemoveBook = () => props.removeBookHandler(props.book.id);
 
   return (
     <li className="book-item">
@@ -28,6 +25,7 @@ const BookItem = (props) => {
 
 BookItem.propTypes = {
   book: PropTypes.instanceOf(Object).isRequired,
+  removeBookHandler: PropTypes.func.isRequired,
 };
 
 export default BookItem;
