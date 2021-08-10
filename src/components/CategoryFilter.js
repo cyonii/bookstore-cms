@@ -14,7 +14,6 @@ const CategoryFilter = () => {
       {category}
     </option>
   ));
-
   const handleChange = (e) => dispatch(changeFilter(e.currentTarget.value));
 
   return (

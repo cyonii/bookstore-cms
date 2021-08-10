@@ -10,7 +10,6 @@ const BooksList = (props) => {
   const dispatch = useDispatch();
 
   const bookRemoveHandler = (id) => dispatch(removeBook(id));
-
   const listItems = books.map((book) => (
     <BookItem key={book.id} book={book} removeBookHandler={bookRemoveHandler} />
   ));

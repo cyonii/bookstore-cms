@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 
 const BookItem = (props) => {
   const { book } = props;
-
   const handleRemoveBook = () => props.removeBookHandler(props.book.id);
 
   return (

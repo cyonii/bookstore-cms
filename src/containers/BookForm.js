@@ -6,7 +6,6 @@ import categories from '../data/categories.json';
 const BookForm = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
-
   const categoryOptions = categories.map((ct) => (
     <option value={ct} key={ct} selected={ct === category}>
       {ct}
