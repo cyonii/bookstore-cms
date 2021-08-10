@@ -39,7 +39,7 @@ const BookForm = () => {
 
   return (
     <form className="book-form">
-      <h1>Add new book</h1>
+      <h2>Add new book</h2>
 
       <div className="input-group">
         <label className="form-label" htmlFor="title">
@@ -50,6 +50,7 @@ const BookForm = () => {
             onChange={handleTitleChange}
             id="title"
             value={title}
+            placeholder="Enter book title"
             required
           />
         </label>
