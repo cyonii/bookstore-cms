@@ -7,20 +7,11 @@ const BookForm = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
 
-  const categoryOptions = categories.map((ct) => {
-    if (ct === category) {
-      return (
-        <option value={ct} key={ct} selected>
-          {ct}
-        </option>
-      );
-    }
-    return (
-      <option value={ct} key={ct}>
-        {ct}
-      </option>
-    );
-  });
+  const categoryOptions = categories.map((ct) => (
+    <option value={ct} key={ct} selected={ct === category}>
+      {ct}
+    </option>
+  ));
 
   const dispatch = useDispatch();
   const handleTitleChange = (e) => setTitle(e.currentTarget.value);
