@@ -1,3 +1,6 @@
+$color-primary: rgb(248, 239, 227);
+$color-grey: #aaa;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,32 +23,97 @@ h6 {
 
 button {
   padding: 0.5rem 1rem;
+}
+
+button,
+select {
   cursor: pointer;
+}
+
+ul {
+  list-style: none;
 }
 
 // Layout
 #root {
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+
+  @media (min-width: 992px) {
+    height: 100vh;
+    max-height: 100vh;
+    flex-direction: row;
+  }
+}
+
+#book-list-container,
+#book-form-container {
+  min-height: 50%;
+  padding: 1rem;
+
+  @media (min-width: 992px) {
+    width: 50%;
+    height: 100%;
+    padding: 2rem;
+    max-height: 100%;
+    overflow-y: scroll;
+  }
+}
+
+#book-list-container {
+  background-color: $color-primary;
+}
+
+#book-form-container {
+  background-color: darken($color-primary, 5%);
 }
 
 .book-list {
   margin-bottom: 3rem;
+}
 
-  th {
-    text-align: left;
-  }
+.book-item {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $color-grey;
+}
 
-  th,
-  td {
-    padding: 1rem;
+.book-title {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+.book-category {
+  font-weight: bold;
+  font-size: 14px;
+  color: darken($color-grey, 30%);
+}
+
+.book-id {
+  color: darken($color-grey, 2%);
+  font-weight: lighter;
+  font-family: monospace;
+}
+
+.book-remove-btn {
+  padding: 0;
+  border: none;
+  color: dodgerblue;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 
 .book-form {
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 992px) {
+    width: 70%;
+    margin: auto;
+  }
 }
 
 .input-group {
@@ -54,11 +122,15 @@ button {
   text-align: left;
 }
 
-.form-label {
-  width: 100%;
-}
-
 .form-control {
   padding: 0.5rem;
   width: 100%;
+}
+
+.form-label {
+  width: 100%;
+
+  .form-control {
+    margin-top: 0.25rem;
+  }
 }
