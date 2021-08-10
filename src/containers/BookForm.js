@@ -1,12 +1,41 @@
-import utils from '../utils';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+// import utils from '../utils';
+import { addBook } from '../actions';
 
 const BookForm = () => {
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
   const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
-  const categoryOptions = categories.map((category) => (
-    <option value={category} key={utils.makeRandomID(5)}>
-      {category}
-    </option>
-  ));
+
+  const categoryOptions = categories.map((ct) => {
+    if (ct === category) {
+      return (
+        <option value={ct} key={ct} selected>
+          {ct}
+        </option>
+      );
+    }
+    return (
+      <option value={ct} key={ct}>
+        {ct}
+      </option>
+    );
+  });
+
+  const dispatch = useDispatch();
+  const handleTitleChange = (e) => setTitle(e.currentTarget.value);
+  const handleCategoryChange = (e) => setCategory(e.currentTarget.value);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (title && category) {
+      dispatch(addBook({ title, category }));
+
+      setTitle('');
+      setCategory('');
+    }
+  };
 
   return (
     <form className="book-form">
@@ -15,14 +44,21 @@ const BookForm = () => {
       <div className="input-group">
         <label className="form-label" htmlFor="title">
           Title
-          <input className="form-control" type="text" name="title" id="title" required />
+          <input
+            className="form-control"
+            type="text"
+            onChange={handleTitleChange}
+            id="title"
+            value={title}
+            required
+          />
         </label>
       </div>
 
       <div className="input-group">
         <label className="form-label" htmlFor="category">
           Category
-          <select className="form-control" name="category" id="category" required>
+          <select className="form-control" onChange={handleCategoryChange} id="category" required>
             <option>--select--</option>
             {categoryOptions}
           </select>
@@ -30,7 +66,7 @@ const BookForm = () => {
       </div>
 
       <div className="input-group">
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" onClick={handleSubmit} className="btn btn-primary">
           Submit
         </button>
       </div>
