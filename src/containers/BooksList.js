@@ -7,16 +7,10 @@ const BooksList = (props) => {
   const tableRows = books.map((book) => <BookItem key={book.id} book={book} />);
 
   return (
-    <table className="book-list">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Title</th>
-          <th>Category</th>
-        </tr>
-      </thead>
-      <tbody>{tableRows}</tbody>
-    </table>
+    <ul className="book-list">
+      <h1>Books CMS</h1>
+      {tableRows}
+    </ul>
   );
 };
 
