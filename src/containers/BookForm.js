@@ -56,7 +56,7 @@ const BookForm = () => {
               id="category"
               required
             >
-              <option value="">--select--</option>
+              <option value="">Category</option>
               {categoryOptions}
             </select>
           </label>
