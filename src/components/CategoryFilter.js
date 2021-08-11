@@ -18,7 +18,6 @@ const CategoryFilter = () => {
 
   return (
     <label htmlFor="category-filter" className="form-label">
-      <b>FILTER:</b>
       <select
         className="form-control"
         id="category-filter"

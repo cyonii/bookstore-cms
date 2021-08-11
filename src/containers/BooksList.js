@@ -1,7 +1,6 @@
 import { connect, useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import BookItem from '../components/BookItem';
-import CategoryFilter from '../components/CategoryFilter';
 import { removeBook } from '../actions';
 import defaultFilter from '../data/defaultFilter.json';
 
@@ -14,13 +13,7 @@ const BooksList = (props) => {
     <BookItem key={book.id} book={book} removeBookHandler={bookRemoveHandler} />
   ));
 
-  return (
-    <ul className="book-list">
-      <h1>Books CMS</h1>
-      <CategoryFilter />
-      {listItems}
-    </ul>
-  );
+  return <ul className="book-list">{listItems}</ul>;
 };
 
 BooksList.propTypes = {
