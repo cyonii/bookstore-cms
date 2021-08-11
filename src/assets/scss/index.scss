@@ -18,13 +18,19 @@ button {
   font-size: 16px;
 }
 
+// Shared props
+.navbar,
+.oval,
+.form-row {
+  display: flex;
+  align-items: center;
+}
+
 // Header
 .navbar {
   margin: 0 0 2.375rem;
   padding: 1.438rem 1rem 1.688rem 1rem;
-  display: flex;
   flex-wrap: wrap;
-  align-items: center;
   background-color: $color-white;
 
   @media (min-width: $screen-md-min) {
@@ -43,10 +49,11 @@ button {
 
 .nav-link {
   margin: 0 0 0 2.563rem;
-  font-family: "Montserrat", sans-serif;
   font-size: 0.813rem;
   letter-spacing: 1.9px;
   color: $color-black-two;
+
+  @include font-primary;
 
   &:not(.active) {
     opacity: 0.5;
@@ -58,9 +65,7 @@ button {
   height: 2.813rem;
   margin: 0 0 0 auto;
   padding: 0.875rem;
-  display: flex;
   justify-content: center;
-  align-items: center;
   border: solid 1px #e8e8e8;
   border-radius: 50%;
 }
@@ -112,10 +117,11 @@ button {
 
     .book-category {
       opacity: 0.5;
-      font-family: "Montserrat", sans-serif;
       font-size: 0.875rem;
       font-weight: bold;
       color: $color-black-two;
+
+      @include font-primary;
     }
 
     .book-title {
@@ -195,9 +201,10 @@ button {
 
       .progress-percentage {
         margin: 0.063rem 0 0 0;
-        font-family: "Montserrat", sans-serif;
         font-size: 2rem;
         color: $color-black-two;
+
+        @include font-primary;
       }
 
       .progress-text {
@@ -276,9 +283,7 @@ button {
   }
 
   .form-row {
-    display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-between;
   }
 
