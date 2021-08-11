@@ -71,24 +71,12 @@ button {
 }
 
 // Category filter
-.filter-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  margin: 2.313rem 1rem 0;
-
-  @media (min-width: $screen-md-min) {
-    margin-left: 6.25rem;
-    margin-right: 6.25rem;
-  }
-}
-
 #category-filter {
-  margin-left: auto;
+  margin-left: 1rem;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
   background-color: $color-white;
-  width: 17.813rem;
-  padding: 0.813rem 0.938rem 0.813rem 1rem;
+  padding: 0.813rem 1rem;
 }
 
 // Book list
@@ -278,7 +266,6 @@ button {
 }
 
 // Book form
-
 .book-form {
   margin: 3.5rem 1rem 5rem 1rem;
   border-top: solid 1px #e8e8e8;
