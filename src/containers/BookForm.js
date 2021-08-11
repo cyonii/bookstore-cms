@@ -31,37 +31,42 @@ const BookForm = () => {
 
   return (
     <form className="book-form" onSubmit={handleSubmit}>
-      <h2>Add new book</h2>
+      <h2 className="form-title">Add new book</h2>
 
-      <div className="input-group">
-        <label className="form-label" htmlFor="title">
-          Title
-          <input
-            className="form-control"
-            type="text"
-            onChange={handleTitleChange}
-            id="title"
-            value={title}
-            placeholder="Enter book title"
-            required
-          />
-        </label>
-      </div>
+      <div className="form-row">
+        <div className="input-group">
+          <label className="form-label" htmlFor="title">
+            <input
+              className="form-control title-input"
+              type="text"
+              onChange={handleTitleChange}
+              id="title"
+              value={title}
+              placeholder="Enter book title"
+              required
+            />
+          </label>
+        </div>
 
-      <div className="input-group">
-        <label className="form-label" htmlFor="category">
-          Category
-          <select className="form-control" onChange={handleCategoryChange} id="category" required>
-            <option value="">--select--</option>
-            {categoryOptions}
-          </select>
-        </label>
-      </div>
+        <div className="input-group">
+          <label className="form-label" htmlFor="category">
+            <select
+              className="form-control category-select"
+              onChange={handleCategoryChange}
+              id="category"
+              required
+            >
+              <option value="">--select--</option>
+              {categoryOptions}
+            </select>
+          </label>
+        </div>
 
-      <div className="input-group">
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
+        <div className="input-group">
+          <button type="submit" className="btn btn-primary">
+            ADD BOOK
+          </button>
+        </div>
       </div>
     </form>
   );

@@ -16,8 +16,9 @@ const BooksList = (props) => {
 
   return (
     <ul className="book-list">
-      <h1>Books CMS</h1>
-      <CategoryFilter />
+      <div className="filter-wrapper">
+        <CategoryFilter />
+      </div>
       {listItems}
     </ul>
   );
